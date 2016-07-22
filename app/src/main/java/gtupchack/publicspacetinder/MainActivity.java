@@ -28,6 +28,14 @@ public class MainActivity extends AppCompatActivity {
         db.addFilter(new Filter("Public Squares"));
         db.addFilter(new Filter("Landmarks"));
 
+        //  Logic for picking a different photo every time the page loads
+        int[] photos = {R.drawable.pc, R.drawable.t, R.drawable.fh, R.drawable.fs};
+        ImageView imgView = (ImageView) findViewById(R.id.imageView);
+        Random ran = new Random();
+        int i = ran.nextInt(photos.length);
+        int img = (int) photos[i];
+        imgView.setImageResource(img);
+
     }
 
     @Override
@@ -52,13 +60,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //  Logic for picking a different photo every time the page loads
-    int[] photos = {R.drawable.pc, R.drawable.t, R.drawable.fh, R.drawable.fs};
-    ImageView imgView = (ImageView) findViewById(R.id.imageView);
-    Random ran = new Random();
-    int i = ran.nextInt(photos.length);
-    int img = (int) photos[i];
-    imgView.setImageResource(img);
+
 
     public void refresh(View view) {
         finish();
