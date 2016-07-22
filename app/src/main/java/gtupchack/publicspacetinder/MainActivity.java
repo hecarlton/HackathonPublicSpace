@@ -5,6 +5,7 @@ import android.util.Log;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -44,11 +45,19 @@ public class MainActivity extends AppCompatActivity {
         db.addPlace(ps);
 
         //  Logic for picking a different photo every time the page loads
+        Place[] places = {b, eb, m, pc, pn, ps};
         int[] photos = {R.drawable.b, R.drawable.eb, R.drawable.m, R.drawable.pc,R.drawable.pn, R.drawable.ps};
+
         ImageView imgView = (ImageView) findViewById(R.id.imageView);
+
         Random ran = new Random();
         int i = ran.nextInt(photos.length);
         int img = (int) photos[i];
+        Place place = (Place) places[i];
+
+        TextView tv = (TextView)findViewById(R.id.textView);
+        tv.setText(place.getPname());
+
         imgView.setImageResource(img);
 
     }

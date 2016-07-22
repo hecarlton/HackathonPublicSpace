@@ -17,10 +17,10 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="60dp"
         android:id="@+id/imageView2"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/t"
+        android:src="@drawable/pinder"
          />
 
 
@@ -35,8 +35,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Parc de la Ciutadella"
         android:id="@+id/textView"
-        android:paddingLeft="45dp"
+        android:paddingLeft="0dp"
         android:textSize="25dp"
+        android:layout_gravity="center_horizontal"
         android:typeface="sans"
         android:textIsSelectable="false"
         android:textColor="#000000" />
@@ -52,12 +53,14 @@
             android:layout_width="85dp"
             android:layout_height="50dp"
             android:src="@drawable/fa"
+            android:background="@null"
             android:onClick="refresh"
             android:id="@+id/imageButton" />
 
         <ImageButton
             android:layout_width="85dp"
             android:layout_height="match_parent"
+            android:background="@null"
             android:src="@drawable/fx"
             android:layout_gravity="center_horizontal"
             android:id="@+id/imageButton2" />
@@ -65,12 +68,14 @@
         <ImageButton
             android:layout_width="85dp"
             android:layout_height="match_parent"
+            android:background="@null"
             android:src="@drawable/fh"
             android:id="@+id/imageButton3" />
 
         <ImageButton
             android:layout_width="85dp"
             android:layout_height="match_parent"
+            android:background="@null"
             android:src="@drawable/fs"
             android:layout_gravity="center_horizontal"
             android:id="@+id/imageButton4" />
