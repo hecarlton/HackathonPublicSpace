@@ -27,9 +27,24 @@ public class MainActivity extends AppCompatActivity {
         db.addFilter(new Filter("Parks"));
         db.addFilter(new Filter("Public Squares"));
         db.addFilter(new Filter("Landmarks"));
+        db.addFilter(new Filter("Market"));
+
+        Place b = new Place("La Boqueria", "La Rambla, 91, 08001 Barcelona", 41.3, 2.1, "Barcelona", "Market");
+        Place eb = new Place("Mercat del Born", "Plaça Comercial, 12, 08003 Barcelona", 41.2, 2.1, "Barcelona", "Landmark");
+        Place m = new Place("Monserrat", "08199 Montserrat, Barcelona", 41.6, 1.8, "Barcelona", "Landmark");
+        Place pc = new Place("Parc de la Ciutadella", "Passeig de Picasso, 21, 08003 Barcelona", 41.4, 2.2, "Barcelona", "Park");
+        Place pn = new Place("Playa de la Barceloneta", "Barceloneta Beach", 41.3, 2.2, "Barcelona", "Landmark");
+        Place ps = new Place("Placa del Sol", "Plaça del Sol, 08012 Barcelona", 41.4, 2.2, "Barcelona", "Public Squares");
+
+        db.addPlace(b);
+        db.addPlace(eb);
+        db.addPlace(m);
+        db.addPlace(pc);
+        db.addPlace(pn);
+        db.addPlace(ps);
 
         //  Logic for picking a different photo every time the page loads
-        int[] photos = {R.drawable.pc, R.drawable.t, R.drawable.fh, R.drawable.fs};
+        int[] photos = {R.drawable.b, R.drawable.eb, R.drawable.m, R.drawable.pc,R.drawable.pn, R.drawable.ps};
         ImageView imgView = (ImageView) findViewById(R.id.imageView);
         Random ran = new Random();
         int i = ran.nextInt(photos.length);
