@@ -1,16 +1,12 @@
 package gtupchack.publicspacetinder;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
-import android.graphics.drawable.Drawable;
-import android.widget.ImageButton;
 
 import java.util.Random;
 import java.util.List;
@@ -59,6 +55,17 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(place.getPname());
 
         imgView.setImageResource(img);
+
+        imgView.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
+            public void onSwipeRight() {
+                refresh(findViewById(android.R.id.content));
+            }
+
+            public void onSwipeLeft() {
+                refresh(findViewById(android.R.id.content));
+            }
+
+        });
 
     }
 
